@@ -8,10 +8,6 @@ provider "aws" {
 locals {
   attributes = [
     {
-      name = "${var.ddb-range-key-name}"
-      type = "${var.ddb-range-key-type}"
-    },
-    {
       name = "${var.ddb-hash-key-name}"
       type = "${var.ddb-hash-key-type}"
     },
