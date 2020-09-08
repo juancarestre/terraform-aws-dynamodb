@@ -4,7 +4,7 @@ resource "aws_dynamodb_table" "ddb_table" {
   write_capacity         = "${var.ddb-write-capacity}"
   hash_key               = "${var.ddb-hash-key-name}"
   range_key              = "${var.ddb-range-key-name}"
-  //attribute              = ["${local.attributes_final}"]
+  attribute              = ["${local.attributes_final}"]
   //local_secondary_index  = ["${var.lsi-list}"]
   //global_secondary_index = ["${var.gsi-list}"]
   tags                   = "${var.tags}"
