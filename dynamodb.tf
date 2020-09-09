@@ -12,9 +12,18 @@ resource "aws_dynamodb_table" "ddb_table" {
 #     "${var.ddb-attributes}",
 #   ]
   
-  attribute {
-    name = "${var.ddb-hash-key-name}"
-    type = "S"
+#   attribute {
+#     name = "${var.ddb-hash-key-name}"
+#     type = "S"
+#   }
+  
+  dynamic "attribute" {
+    for_each = var.tableschema
+
+    content {
+      name                 = attribute.value.name
+      type               = attribute.value.type
+    }
   }
   
   
