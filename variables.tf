@@ -10,6 +10,12 @@ variable "ddb-attributes" {
   default     = []
 }
 
+variable "tableschema" {
+  description = "table schema"
+  type = "list"
+  default = []
+}
+
 variable "lsi-list" {
   description = "A list of LSI map descriptions."
   type        = "list"
